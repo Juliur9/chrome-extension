@@ -4,7 +4,21 @@
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <button id="playButton"> Play </button>
+    <h2 style="text-align: center;">Password-Generator</h2>
+    <div class="generate-tools">
+        <button id="generatebutton"> Generate </button>
+        
+        <div class="length">
+            <input type="range" id="passwordlengthrange" name="length" min="3" max="20">
+            <p id="passwordlengthtext">14</p>
+        </div>
+
+    </div>
+    <div class="password">
+        <p id="passwordfield">mmmm</p>
+        <button id="copypassword">Copy</button>
+    </div>
+
     <script src="popup.js"></script>
 </body>
 </html>

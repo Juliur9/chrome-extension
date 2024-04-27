@@ -1,10 +1,66 @@
-button {
+#generatebutton {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 30px;
+    padding: 10px 12px;
     margin: 10px;
-    background-color: aliceblue;
+    background-color:white;
     border-radius: 15px;
     border: 1px black solid; 
+}
+
+.generate-tools{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.length {
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-between;
+    margin-right: 10px;
+    align-items: center;
+}
+
+#passwordlengthrange {
+    margin-right: 10px;
+    width: 55vb;
+}
+
+.password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#passwordfield {
+    margin-right: 10px;
+}
+
+#passwordlengthtext {
+    width: 15px;
+    text-align: right;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+  
+input[type=range] {
+    border-radius: 6px;
+    height: 10px;
+    border: 1px solid blue;
+    background-color: cornflowerblue; 
+}
+
+#copypassword {
+    justify-content: center;
+    align-items: center;
+    padding: 7px 10px;
+    margin: 10px;
+    background-color:white;
+    border-radius: 15px;
+    border: 1px black solid;
 }
