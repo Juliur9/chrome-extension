@@ -4,10 +4,22 @@ const passwordlengthrange = document.getElementById("passwordlengthrange");
 const passwordlengthtext = document.getElementById("passwordlengthtext");
 const copypassword = document.getElementById("copypassword");
 
-copypassword.style.visibility = "hidden";
-passwordfield.style.visibility = "hidden";
+console.log(localStorage.getItem("lastpassword"))
+if (localStorage.getItem("lastpassword")) {
+    passwordfield.textContent = localStorage.getItem("lastpassword");
+    copypassword.style.visibility = "visible";
+    passwordfield.style.visibility = "visible";
+} else {
+    copypassword.style.visibility = "hidden";
+    passwordfield.style.visibility = "hidden";
+}
 
-passwordlengthrange.value = document.cookie;
+if (localStorage.getItem("passwordLength")) {
+    passwordlengthrange.value = localStorage.getItem("passwordLength");
+} else {
+    passwordlengthrange.value = 12;
+}
+
 ChangeLengthText();
 
 generatebutton.addEventListener("click", function() {
@@ -39,7 +51,7 @@ function NewPassword() {
         const randomIndex = Math.floor(Math.random() * allChars.length);
         password += allChars[randomIndex];
     }
-    console.log(password);
+    localStorage.setItem("lastpassword", password);
     passwordfield.textContent = password;
 }
 
@@ -55,5 +67,5 @@ function CopyPassword() {
 
 function ChangeLengthText() {
     passwordlengthtext.textContent = passwordlengthrange.value;
-    document.cookie = passwordlengthtext.textContent;
+    localStorage.setItem("passwordLength", passwordlengthrange.value);
 }
