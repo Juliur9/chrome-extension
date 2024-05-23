@@ -56,11 +56,23 @@ input[type=range] {
 }
 
 #copypassword {
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7px 10px;
+    width: 70px;
+    height: 35px;
     margin: 10px;
     background-color:white;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px black solid;
+}
+#copypasswordicon {
+    margin: 0px 5px 0px 2px;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;      
 }

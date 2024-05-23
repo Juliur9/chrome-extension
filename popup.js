@@ -3,6 +3,8 @@ const passwordfield = document.getElementById("passwordfield");
 const passwordlengthrange = document.getElementById("passwordlengthrange");
 const passwordlengthtext = document.getElementById("passwordlengthtext");
 const copypassword = document.getElementById("copypassword");
+const copypasswordtext = document.getElementById("copypasswordtext");
+const copypasswordicon = document.getElementById("copypasswordicon");
 
 console.log(localStorage.getItem("lastpassword"))
 if (localStorage.getItem("lastpassword")) {
@@ -37,6 +39,8 @@ passwordlengthrange.addEventListener("change", function() {
 function NewPassword() {
     copypassword.style.visibility = "visible";
     passwordfield.style.visibility = "visible";
+    copypasswordicon.className = "fa-regular fa-copy";
+    copypasswordtext.textContent = "Copy";
 
     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
     const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -58,7 +62,13 @@ function NewPassword() {
 function CopyPassword() {
     navigator.clipboard.writeText(passwordfield.textContent)
     .then(() => {
-        console.log("Passwort wurde in die Zwischenablage kopiert.");
+        copypasswordicon.className = "fa-solid fa-copy";
+        copypasswordtext.textContent = "Copied";
+        
+        setTimeout(function() {
+            copypasswordicon.className = "fa-regular fa-copy";
+            copypasswordtext.textContent = "Copy";
+        }, 3000);
     })
     .catch(err => {
         console.error("Fehler beim Kopieren in die Zwischenablage:", err);

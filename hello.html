@@ -2,21 +2,26 @@
 <html>
 <head>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <h2 style="text-align: center;">Password-Generator</h2>
+    <h2 class="unselectable" style="text-align: center;">Password-Generator</h2>
     <div class="generate-tools">
-        <button id="generatebutton"> Generate </button>
+        <button class="unselectable" id="generatebutton"> Generate </button>
         
-        <div class="length">
+        <div class="length unselectable">
             <input type="range" id="passwordlengthrange" name="length" min="3" max="20">
             <p id="passwordlengthtext">14</p>
         </div>
 
     </div>
     <div class="password">
-        <p id="passwordfield">mmmm</p>
-        <button id="copypassword">Copy</button>
+        <p id="passwordfield">password</p>
+        
+        <div class="unselectable" id="copypassword">
+            <i id="copypasswordicon" class="fa-regular fa-copy"></i>
+            <p id="copypasswordtext">Copy</p>
+        </div>
     </div>
 
     <script src="popup.js"></script>
