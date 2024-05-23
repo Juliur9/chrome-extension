@@ -11,9 +11,13 @@ if (localStorage.getItem("lastpassword")) {
     passwordfield.textContent = localStorage.getItem("lastpassword");
     copypassword.style.visibility = "visible";
     passwordfield.style.visibility = "visible";
+    copypasswordicon.className = "fa-solid fa-copy";
+    copypasswordicon.className = "fa-regular fa-copy";
 } else {
     copypassword.style.visibility = "hidden";
     passwordfield.style.visibility = "hidden";
+    copypasswordicon.className = "fa-solid fa-copy";
+    copypasswordicon.className = "fa-regular fa-copy";
 }
 
 if (localStorage.getItem("passwordLength")) {
